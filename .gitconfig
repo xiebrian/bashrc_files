@@ -1,0 +1,11 @@
+[user]
+	email = brianxie@mit.edu
+	name = brianxie
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	grep = auto
+[alias]
+	lol = log --graph --oneline --decorate --color --all
