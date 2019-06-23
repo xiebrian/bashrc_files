@@ -122,6 +122,112 @@ set foldmethod=indent
 nnoremap <space> za
 
 " ==============================================================================
+" REMAPPING KEY BINDINGS
+" ==============================================================================
+
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
+map i a
+
+" Drag down the screen, without changing the cursor location
+map <C-Up> <C-Y>
+map <C-Down> <C-E>
+
+" Redo previous change with r
+map r <C-r>
+
+" Copy/paste/cut to system clipboard
+set clipboard=unnamedplus
+
+" ==============================================================================
+" DISABLE UNUSED KEY BINDINGS
+" ==============================================================================
+
+" See https://hea-www.harvard.edu/~fine/Tech/vi.html for all vi commands
+map b <Nop>
+map c <Nop>
+map e <Nop>
+map f <Nop>
+map h <Nop>
+map j <Nop>
+map k <Nop>
+map l <Nop>
+map m <Nop>
+map s <Nop>
+map t <Nop>
+map w <Nop>
+map x <Nop>
+
+map A <Nop>
+map B <Nop>
+map C <Nop>
+map D <Nop>
+map E <Nop>
+map F <Nop>
+map H <Nop>
+map K <Nop>
+map L <Nop>
+map M <Nop>
+map O <Nop>
+map Q <Nop>
+map R <Nop>
+map S <Nop>
+map T <Nop>
+map U <Nop>
+map V <Nop>
+map W <Nop>
+map X <Nop>
+map Y <Nop>
+map Z <Nop>
+
+map ! <Nop>
+map @ <Nop>
+map $ <Nop>
+map ^ <Nop>
+map & <Nop>
+map * <Nop>
+map \( <Nop>
+map \) <Nop>
+map \ <Nop>
+map \| <Nop>
+map - <Nop>
+map _ <Nop>
+map = <Nop>
+map + <Nop>
+map ; <Nop>
+map ' <Nop>
+map ` <Nop>
+map " <Nop>
+map ~ <Nop>
+map , <Nop>
+map . <Nop>
+
+map <C-a> <Nop>
+map <C-b> <Nop>
+map <C-d> <Nop>
+map <C-f> <Nop>
+map <C-g> <Nop>
+map <C-h> <Nop>
+map <C-i> <Nop>
+map <C-j> <Nop>
+map <C-k> <Nop>
+map <C-l> <Nop>
+map <C-m> <Nop>
+map <C-n> <Nop>
+map <C-o> <Nop>
+map <C-p> <Nop>
+map <C-q> <Nop>
+map <C-s> <Nop>
+map <C-t> <Nop>
+map <C-u> <Nop>
+map <C-w> <Nop>
+map <C-x> <Nop>
+map <C-z> <Nop>
+
+" ==============================================================================
 " MISCELLANEOUS
 " ==============================================================================
 
