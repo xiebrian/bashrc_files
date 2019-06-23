@@ -122,3 +122,8 @@ PS1=${ORIG}${TITLE}
 }
 
 export PATH="$HOME/bin:$PATH"
+export EDITOR=vim
+
+function cd {
+    builtin cd "$@" && ls
+}

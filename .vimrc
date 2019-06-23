@@ -56,6 +56,13 @@ set wildmenu
 " display status bar always
 set laststatus=2
 
+" removes trailing whitespace
+command! Removetrailing :%s/[ \t]*$//g
+
+" display ruler after column 80
+set colorcolumn=81
+highlight ColorColumn ctermbg=darkgrey
+
 " customize status bar display
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
