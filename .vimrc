@@ -130,8 +130,6 @@ command Wq wq
 command W w
 command Q q
 
-map i a
-
 " Drag down the screen, without changing the cursor location
 map <C-Up> <C-Y>
 map <C-Down> <C-E>
@@ -147,6 +145,7 @@ set clipboard=unnamedplus
 " ==============================================================================
 
 " See https://hea-www.harvard.edu/~fine/Tech/vi.html for all vi commands
+map a <Nop>
 map b <Nop>
 map c <Nop>
 map e <Nop>
