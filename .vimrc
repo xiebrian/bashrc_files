@@ -121,6 +121,10 @@ set foldmethod=indent
 " space open/closes folds
 nnoremap <space> za
 
+" remember folds even after exiting vim
+autocmd BufWinLeave * mkview!
+autocmd BufWinEnter * silent loadview
+
 " ==============================================================================
 " REMAPPING KEY BINDINGS
 " ==============================================================================
