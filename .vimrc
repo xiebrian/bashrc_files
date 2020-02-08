@@ -236,3 +236,6 @@ map <C-z> <Nop>
 
 " ignores these patterns when opening files using glob
 set wildignore+=.pyc,.swp
+
+" prevents gofmt from running automatically when saving
+let g:go_fmt_autosave = 0
