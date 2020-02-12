@@ -1,4 +1,7 @@
 
+# Sudo executes aliases properly
+alias sudo="sudo "
+
 # Aliases for accessing config files
 alias bashrc='vim ~/.bashrc'
 alias bash_aliases='vim ~/.bash_aliases'
