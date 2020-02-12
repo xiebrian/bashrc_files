@@ -6,16 +6,12 @@
 
 [keybindings]
   new_tab = <Ctrl>T
-
   next_tab = <Ctrl>Tab
   prev_tab = <Ctrl><Shift>Tab
-
   cycle_next = <Ctrl>N
   cycle_prev = <Ctrl>P
-
   close_window = <Ctrl>Q
   close_term = <Ctrl>W
-
   reset = <Ctrl>R
 
 [layouts]
