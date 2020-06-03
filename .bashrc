@@ -137,6 +137,9 @@ export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=GxBxCxDxCxEgEdAbAgAcAd
 
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
+
 # sudo executes aliases properly
 alias sudo="sudo "
 

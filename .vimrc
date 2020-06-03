@@ -148,6 +148,10 @@ au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 " Copy/paste/cut to system clipboard
 set clipboard=unnamed
 
+" Shortcut for ArgWrap
+nnoremap <silent> aw :ArgWrap<CR>
+map gb <C-T>
+
 " ==============================================================================
 " DISABLE UNUSED KEY BINDINGS
 " ==============================================================================
@@ -246,3 +250,6 @@ set wildignore+=.pyc,.swp
 
 " prevents gofmt from running automatically when saving
 let g:go_fmt_autosave = 0
+
+" manipulate runtime path (for vim-pathogen)
+execute pathogen#infect()
