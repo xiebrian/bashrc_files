@@ -141,10 +141,6 @@ map <C-Down> <C-E>
 " Redo previous change with r
 map r <C-r>
 
-" Map caps lock to esc
-au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
-
 " Copy/paste/cut to system clipboard
 set clipboard=unnamed
 
