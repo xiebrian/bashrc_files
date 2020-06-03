@@ -1,1 +1,1 @@
-This repository contains configuration files for my Ubuntu 18.04 environment for easy access. I am using terminator, and the file titled 'config' belongs in a folder ~/.config/terminator/
+This branch contains configuration files specific to MacOS (10.15 Catalina). It is mostly identical to the Ubuntu 18.04 environment, but I'm using ITerm2, and the file called "com.googlecode.iterm2.plist" is the configuration file for ITerm2. It belongs in the directory ~/Library/Preferences. 
