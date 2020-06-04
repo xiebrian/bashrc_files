@@ -31,6 +31,9 @@ set backspace=indent,eol,start
 " enable syntax hilighting
 syntax on
 
+" make line numbers dark grey
+highlight LineNr ctermfg=darkgrey
+
 " ==============================================================================
 " DISPLAY FEATURES
 " ==============================================================================
