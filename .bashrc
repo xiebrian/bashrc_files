@@ -140,6 +140,10 @@ export LSCOLORS=GxBxCxDxCxEgEdAbAgAcAd
 export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;35;40'
 
+# Keyboard shortcut for fuzzyfinder
+alias vo='vim $(fzf)'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
+
 # sudo executes aliases properly
 alias sudo="sudo "
 
@@ -148,3 +152,11 @@ alias bashrc="vim ~/.bashrc"
 alias bash_local="vim ~/.bash_local"
 alias sbashrc="source ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
+
+# Starts fzf keyboard shortcuts
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Performs fuzzyfind to search for lines of code, then open it in vim
+vc() {
+  vim $(ag --nobreak --noheading . | fzf --reverse | awk -F ':' '{print $1" +"$2}')
+}

@@ -1,3 +1,21 @@
+" disables opening vim without any arguments or with directory argument
+if argc() == 0
+  echomsg "vimrc: Refusing to open vim without file argument"
+  quit
+endif
+
+if argc() >= 2
+  echomsg "vimrc: Refusing to open vim with multiple file arguments"
+  quit
+endif
+
+for f in argv()
+  if isdirectory(f)
+    echomsg "vimrc: Refusing to edit directory " . f
+    quit
+  endif
+endfor
+
 " ============================================================================== 
 " SPACES AND INDENTS 
 " ==============================================================================
