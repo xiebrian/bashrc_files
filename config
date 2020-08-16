@@ -11,6 +11,7 @@
   close_window = <Primary>q
   cycle_next = None
   cycle_prev = None
+  layout_launcher = None
   new_tab = <Ctrl>T
   next_tab = <Ctrl>Tab
   prev_tab = <Ctrl><Shift>Tab
