@@ -1,19 +1,20 @@
 [global_config]
   inactive_color_offset = 0.9
   suppress_multiple_term_dialog = True
-  window_state = 'maximise'
-  title_font = "Sans 12"
-
+  title_font = Sans 12
+  window_state = maximise
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = <Ctrl>W
+  close_window = <Ctrl>Q
+  cycle_next = None
+  cycle_prev = None
   new_tab = <Ctrl>T
   next_tab = <Ctrl>Tab
   prev_tab = <Ctrl><Shift>Tab
-  cycle_next = <Ctrl>N
-  cycle_prev = <Ctrl>P
-  close_window = <Ctrl>Q
-  close_term = <Ctrl>W
   reset = <Ctrl>R
-
 [layouts]
   [[default]]
     [[[child1]]]
