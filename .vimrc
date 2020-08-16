@@ -84,9 +84,13 @@ set laststatus=2
 " removes trailing whitespace
 command! Removetrailing :%s/[ \t]*$//g
 
-" display ruler after column 80
-set colorcolumn=81
-highlight ColorColumn ctermbg=darkgrey
+" display ruler after column 80, only for python and C++
+autocmd FileType python setlocal colorcolumn=81
+autocmd FileType python highlight ColorColumn ctermbg=black
+autocmd FileType cpp setlocal colorcolumn=81
+autocmd FileType cpp highlight ColorColumn ctermbg=black
+autocmd FileType c setlocal colorcolumn=81
+autocmd FileType c highlight ColorColumn ctermbg=black
 
 set statusline=
 set statusline+=%#LineNr#
