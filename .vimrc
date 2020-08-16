@@ -175,6 +175,9 @@ noremap <C-L> <C-W><Right>
 set splitbelow
 set splitright
 
+" shortcut for ArgWrap
+nnoremap <silent> aw :ArgWrap<CR>
+
 " ==============================================================================
 " DISABLE UNUSED KEY BINDINGS
 " ==============================================================================
