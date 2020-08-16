@@ -145,3 +145,11 @@ alias bash_local="vim ~/.bash_local"
 alias sbashrc="source ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias term_config="vim ~/.config/terminator/config"
+
+# fzf keyboard shortcuts and settings
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
+alias vo='vim $(fzf)'
+vc() {
+  vim $(ag --nobreak --noheading . | fzf --reverse | awk -F ':' '{print $1" + "$s}')
+}
