@@ -1,5 +1,27 @@
+" ==============================================================================
+" OPENING VIM
+" ==============================================================================
+
+" disables opening vim with zero, multiple, or directory argument(s)
+if argc() == 0
+  echomsg "vimrc: Refusing to open vim without file argument"
+  quit
+endif
+
+if argc() >= 2
+  echomsg "vimrc: refusing to open vim with multiple file arguments"
+  quit
+endif
+
+for f in argv()
+  if isdirectory(f)
+    echomsg "vimrc: Refusing to edit directory " . f
+    quit
+  endif
+endfor
+
 " ============================================================================== 
-" SPACES AND INDENTS 
+" SPACES / INDENTS 
 " ==============================================================================
 
 " width of tab character
@@ -10,6 +32,10 @@ set softtabstop=4
 
 " determines the amount of whitespace to add in normal mode
 set shiftwidth=4
+
+" use 2-space tabs for Typescript and Proto files
+autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType proto setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " uses space instead of tabs
 set expandtab
@@ -25,18 +51,17 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set backspace=indent,eol,start
 
 " ==============================================================================
-" COLOR 
+" DISPLAY / COLOR 
 " ==============================================================================
  
 " enable syntax hilighting
 syntax on
 
-" ==============================================================================
-" DISPLAY FEATURES
-" ==============================================================================
-
 " display line numbers on the left
 set number
+
+" make line numbers dark grey
+highlight LineNr ctermfg=darkgrey
 
 " sets screen title to name of file
 set title
@@ -63,20 +88,9 @@ command! Removetrailing :%s/[ \t]*$//g
 set colorcolumn=81
 highlight ColorColumn ctermbg=darkgrey
 
-" customize status bar display
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
 set statusline=
 set statusline+=%#LineNr#
-" set statusline+=%{StatuslineGit()}
-set statusline+=\ %f
+set statusline+=\ %F
 set statusline+=%m
 set statusline+=%=
 set statusline+=\ %l/%L:%c
@@ -141,12 +155,21 @@ map <C-Down> <C-E>
 " Redo previous change with r
 map r <C-r>
 
-" Map caps lock to esc
-au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
-
 " Copy/paste/cut to system clipboard
 set clipboard=unnamedplus
+
+" 'go back' to the last tag (use after go to definition)
+map gb <C-T>
+
+" Split vim pane (horizontally or vertically)
+map hsp <C-w>s
+map vsp <C-W>v
+noremap <C-H> <C-W><Left>
+noremap <C-J> <C-W><Down>
+noremap <C-K> <C-W><Up>
+noremap <C-L> <C-W><Right>
+set splitbelow
+set splitright
 
 " ==============================================================================
 " DISABLE UNUSED KEY BINDINGS
@@ -217,11 +240,7 @@ map <C-b> <Nop>
 map <C-d> <Nop>
 map <C-f> <Nop>
 map <C-g> <Nop>
-map <C-h> <Nop>
 map <C-i> <Nop>
-map <C-j> <Nop>
-map <C-k> <Nop>
-map <C-l> <Nop>
 map <C-m> <Nop>
 map <C-n> <Nop>
 map <C-o> <Nop>
@@ -230,7 +249,6 @@ map <C-q> <Nop>
 map <C-s> <Nop>
 map <C-t> <Nop>
 map <C-u> <Nop>
-map <C-w> <Nop>
 map <C-x> <Nop>
 map <C-z> <Nop>
 
